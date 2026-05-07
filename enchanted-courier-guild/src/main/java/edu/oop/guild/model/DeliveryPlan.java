@@ -45,8 +45,13 @@ public class DeliveryPlan {
 		return priceInCoins;
 	}
 	
+//	public String summary() {
+//		return String.format("%s delivers ☁ %s to %s ☁ for %d coins", courier.name(), sealedLabel, request.getDestinationRealm() ,priceInCoins);
+//	}
+
+	
 	public String summary() {
-		return String.format("%s delivers ☁ %s to %s ☁ for %d coins", courier.name(), sealedLabel, request.getDestinationRealm() ,priceInCoins);
+		return String.format("%s delivers %s for %d coins", courier.name(), sealedLabel, priceInCoins);
 	}
 
 }
