@@ -16,7 +16,6 @@ public class CarefulDeliveryStrategy implements DeliveryCostStrategy {
 			case ARTIFACT -> 27;
 		};
 		
-		// Exact same as express delivery but the math still checks out?
 		return packageAdd + (request.getWeightKg() * 4) + (request.getDistanceLeagues() * 5) + (request.isFragile() ? 10 : 0);
 	}
 
