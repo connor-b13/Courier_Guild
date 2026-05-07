@@ -10,13 +10,7 @@ public class CarefulDeliveryStrategy implements DeliveryCostStrategy {
 			throw new NullPointerException("request cannot be null");
 		}
 		
-		int packageAdd = switch (request.getPackageType()) {
-			case FOOD -> 10;
-			case POTION -> 15;
-			case ARTIFACT -> 27;
-		};
-		
-		return packageAdd + (request.getWeightKg() * 4) + (request.getDistanceLeagues() * 5) + (request.isFragile() ? 10 : 0);
+		return DeliveryCostStrategy.packageAdd(request.getPackageType()) + (request.getWeightKg() * 4) + (request.getDistanceLeagues() * 5);
 	}
 
 }
